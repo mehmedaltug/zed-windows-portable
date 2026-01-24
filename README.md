@@ -4,7 +4,7 @@ A simple portable mode wrapper that launches Zed Editor in portable mode. File s
 
 ```
  │
- ├── app/	                	# Must contain zed.exe
- ├── data/	               	# Where data will be stored
- └── zed-launcher.exe	     # Launcher itself
+ ├── app/                  # Must contain zed.exe
+ ├── data/                 # Where data will be stored
+ └── zed-launcher.exe      # Launcher itself
 ```
