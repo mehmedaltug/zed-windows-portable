@@ -1,12 +1,11 @@
 name: Create Executable
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   release:
     types: [published]
+
+permissions:
+  contents: write
 
 jobs:
   build:
