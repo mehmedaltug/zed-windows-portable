@@ -1,0 +1,39 @@
+name: Create Executable
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  release:
+    types: [published]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout source at release tag
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.release.tag_name }}
+
+    - name: Setup MSYS2
+      uses: msys2/setup-msys2@v2
+      with:
+        install: mingw-w64-x86_64-gcc make
+    
+    - name: Create executable
+      run: |
+        make
+        mkdir dist
+        cp zed-launcher.exe dist/
+
+    - name: Upload EXE to Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ github.event.release.tag_name }}
+        files: dist/zed-launcher.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
