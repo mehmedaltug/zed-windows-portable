@@ -1,6 +1,6 @@
-## Portable Mode Wrapper
+## Zed Portable Mode Launcher
 
-A simple portable mode wrapper that launches Zed Editor in portable mode. File structure should look like this:
+A simple portable mode launcher that starts Zed Editor in a portable manner. File structure should look like this:
 
 ```
  │
