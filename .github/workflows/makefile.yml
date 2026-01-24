@@ -4,13 +4,10 @@ on:
   release:
     types: [published]
 
-permissions:
-  contents: write
-
 jobs:
   build:
-
     runs-on: windows-latest
+    permissions: write-all
 
     steps:
     - name: Checkout source at release tag
