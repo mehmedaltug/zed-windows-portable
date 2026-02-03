@@ -1,11 +1,10 @@
 ## Zed Portable Mode Launcher
 
-A simple portable mode launcher that starts Zed Editor in a portable manner. File structure should look like this:
+A simple portable mode launcher that starts Zed Editor in a portable manner. The "data" folder will be created in the initial launch. File structure should look like this:
 
 ```
  │
  ├── app/                  # Must contain zed.exe
- ├── data/                 # Where data will be stored
  └── zed-launcher.exe      # Launcher itself
 ```
 
