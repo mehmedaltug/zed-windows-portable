@@ -7,6 +7,3 @@ main:
 
 clean:
 	rm .\$(OUTPUT)
-
-copy:
-	cp $(OUTPUT) ..\\$(OUTPUT)
