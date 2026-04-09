@@ -3,7 +3,7 @@
 #include <dirent.h>
 #include <errno.h>
 
-int main()
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	DIR *app_dir = opendir("app");
 	DIR *data_dir = opendir("data");
