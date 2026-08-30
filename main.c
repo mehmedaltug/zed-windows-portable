@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <dirent.h>
 #include <errno.h>
+#include <shellapi.h>
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -16,7 +17,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	if (app_dir)
 	{
 		closedir(app_dir);
-		system("start /b app\\zed.exe --user-data-dir .\\data && exit");
+        ShellExecuteA(NULL, "open", "app\\zed.exe", "--user-data-dir .\\data", NULL, SW_SHOWNORMAL);
 	}
 	else if (ENOENT == errno)
 		MessageBox(NULL, "The Zed App Folder Is Not Found!", NULL, MB_OK | MB_ICONWARNING);
