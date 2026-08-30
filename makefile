@@ -3,7 +3,9 @@ CFILES=$(wildcard *.c)
 CFLAGS=-O3 -mwindows -lwinmm
 OUTPUT=zed-launcher.exe
 
-main:
+.PHONY: all clean
+
+all: main.c
 	$(CC) $(CFILES) -o $(OUTPUT) $(CFLAGS)
 
 clean:
